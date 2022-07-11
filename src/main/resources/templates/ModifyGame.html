@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/LiteraBootswatch.css}">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">GameStop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</head>
+<body>
+    <h1>New Game</h1>
+
+    <div>
+        <form th:action="@{/save}" method="post" th:object="${games}">
+            <label for="Title"></label>
+            <input type="text" name="Title" th:field="*{Title}" placeholder="Title" class="form-outline mb-4"/>
+            <br/>
+            <label for="Genre" class="form-label mt-4"></label>
+            <select name="Genre" th:field="*{Genre}" class="form-select">
+
+            </select>
+            <br/>
+            <label for="Release_Date"></label>
+            <input type="date" name="Release_Date" th:field="*{Release_Date}" placeholder="Release Date" class="form-outline mb-4"/>
+            <br/>
+            <label for="Image"></label>
+            <input type="image" name="Image" th:field="*{Image}" placeholder="Product Image" class="form-outline mb-4"/>
+            <br/>
+            <label for="Video"></label>
+            <input type="image" name="Video" th:field="*{Video}" placeholder="Game Trailer" class="form-outline mb-4"/>
+            <br/>
+            <label for="Available">Available</label>
+            <input type="radio" name="Image" th:field="*{Available}" class="form-outline mb-4"/>
+            <label for="Available">Out of Stock</label>
+            <input type="radio" name="Image" th:field="*{Available}" class="form-outline mb-4"/>
+            <br/>
+
+            <a th:href="@{/}" class="btn btn-secondary">Go Back</a>
+            <input type="submit" class="btn btn-primary" name="Submit">
+
+
+        </form>
+    </div>
+</body>
+</html>

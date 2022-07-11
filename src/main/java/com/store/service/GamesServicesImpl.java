@@ -1,7 +1,7 @@
-package com.store.gamestop.service;
+package com.store.service;
 
-import com.store.gamestop.domain.Games;
-import com.store.gamestop.dao.GamesDao;
+import com.store.domain.Games;
+import com.store.dao.GamesDao;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

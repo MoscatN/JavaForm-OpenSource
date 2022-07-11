@@ -1,7 +1,7 @@
-package com.store.gamestop.service;
+package com.store.service;
 
 import java.util.List;
-import com.store.gamestop.domain.Games;
+import com.store.domain.Games;
 
 public interface GamesServices {
     public List<Games> GamesList();

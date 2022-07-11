@@ -1,4 +1,4 @@
-package com.store.gamestop.domain;
+package com.store.domain;
 
 import java.util.Date;
 import javax.persistence.*;
@@ -21,5 +21,6 @@ public class Games {
     private String Image;
     @Nullable
     private String Video;
-    private String Available;
+    @Nullable
+    private Boolean Available;
 }

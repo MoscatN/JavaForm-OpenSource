@@ -1,8 +1,8 @@
-package com.store.gamestop.web;
-import com.store.gamestop.domain.Games;
+package com.store.web;
+import com.store.domain.Games;
 import java.util.List;
 
-import com.store.gamestop.service.GamesServices;
+import com.store.service.GamesServices;
 import org.springframework.stereotype.Controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

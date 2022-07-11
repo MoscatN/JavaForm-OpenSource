@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.context.annotation.ComponentScan;
 
 //@SpringBootApplication
-@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
-@ComponentScan(basePackages = {"com.store.GameStopApplication"})
+@SpringBootApplication
+//@ComponentScan(basePackages = {"com.store.GameStopApplication"})
 
 public class GameStopApplication {
 

@@ -45,15 +45,13 @@
             <tr th:each="game : ${games} ">
                 <td th:text="${game.GameID}">Show ID</td>
                 <td th:text="${game.Title}">Show Title</td>
-                <td th:text="${game.Genre}">Show ID</td>
-                <td th:text="${game.GameID}">Show ID</td>
-                <td th:text="${game.GameID}">Show ID</td>
-                <td th:text="${game.GameID}">Show ID</td>
-                <td th:text="${game.GameID}">Show ID</td>
-                <td th:text="${game.GameID}">Show ID</td>
-                <td th:text="${game.GameID}">Show ID</td>
-                <td><a th:href="@{/edit} + ${game.GameID}" class="btn btn-success">Edit</a></td>
-                <td><a th:href="@{/delete} + ${game.GameID}" class="btn btn-warning">Delete</a></td>
+                <td th:text="${game.Genre}">Show Genre</td>
+                <td th:text="${game.Release_Date}">Show Release_Date</td>
+                <td th:text="${game.Image}">Show Image</td>
+                <td th:text="${game.Video}">Show Video</td>
+                <td th:text="${game.Available}">Show Available</td>
+                <td><a th:href="@{/edit} + ${game.GameID}" class="btn btn-success" th:text="Edit"></a></td>
+                <td><a th:href="@{/delete} + ${game.GameID}" class="btn btn-warning" th:text="Delete"></a></td>
 
             </tr>
         </table>

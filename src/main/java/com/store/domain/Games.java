@@ -19,8 +19,6 @@ public class Games implements Serializable {
     private String Release_Date;
     @Column(length = 64, nullable = true)
     private String Image;
-    @Column(length = 64, nullable = true)
-    private String Video;
     private String Available;
     private String Genre;               //DropDownList
 

@@ -1,25 +1,42 @@
 package com.store.domain;
 
-import java.util.Date;
 import javax.persistence.*;
 import lombok.Data;
-import java.io.Serializable; 
-import org.springframework.lang.Nullable;
+import java.io.Serializable;
 
 @Data
 @Entity
 @Table(name = "Games")
-public class Games implements Serializable
-{    
+public class Games implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
-    @Id
+    
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long GameID;
+    @Id 
+    private Long GamesID;
     private String Title;
-    private String Genre;       //DropDownList
-    private Date Release_Date;
+    private String Release_Date;
+    @Column(length = 64, nullable = true)
     private String Image;
+    @Column(length = 64, nullable = true)
     private String Video;
-    private Boolean Available;
+    private String Available;
+    private String Genre;               //DropDownList
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String Image) {
+        this.Image = Image;
+    }
+
+    @Transient
+    public String getGameImagePath()
+    {
+        if(Image == null || GamesID == null) return null;
+        
+        return "/games-photos/" + GamesID + "/" + Image;
+    }
 }

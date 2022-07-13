@@ -5,6 +5,7 @@
         <title>Create</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" th:href="@{/LiteraBootswatch.css}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">GameStop</a>
@@ -18,28 +19,28 @@
     <h1>New Game</h1>
 
     <div>
-        <form th:action="@{/games/save}" method="post" th:object="${games}">
+        <form th:action="@{/games/save}" method="post" th:object="${games}" enctype="multipart/form-data"
+              style="max-width: 400px; margin: 0 auto;">
             <label for="Title"></label>
             <input type="text" name="Title" th:field="*{Title}" placeholder="Title" class="form-outline mb-4"/>
             <br/>
             <label for="Genre" class="form-label mt-4"></label>
             <select name="Genre" th:field="*{Genre}" class="form-select" size="1">
                 <option value="">Choose...</option>
-                <option value="1">RPG</option>
-                <option value="2">Aventura</option>
-                <option value="3">Shooter</option>
-                <option value="2">Sandbox</option>
-                <!--                <option th:each="genre: ${genres}" th:value="${genre.GenresID}" th:name="${genre.Genre}"></option>-->
+                <option value="RPG">RPG</option>
+                <option value="Aventura">Aventura</option>
+                <option value="Shooter">Shooter</option>
+                <option value="Sandbox">Sandbox</option>
             </select>
             <br/>
             <label for="Release_Date"></label>
             <input type="date" name="Release_Date" th:field="*{Release_Date}" placeholder="Release Date" class="form-outline mb-4"/>
             <br/>
             <label for="Image" class="form-label"></label>
-            <input type="file" name="Image" th:field="*{Image}" placeholder="Product Image" class="form-control form-control-sm"/>
+            <input type="file" name="image" accept="image/png, image/jpeg" placeholder="Product Image" class="form-control form-control-sm fileImage"/>
             <br/>
             <label for="Video" class="form-label"></label>
-            <input type="file" name="Video" th:field="*{Video}" placeholder="Game Trailer" class="form-control form-control-sm"/>
+            <input type="file" name="image" th:field="*{Video}" accept="image/mkv, image/mp4" placeholder="Game Trailer" class="form-control form-control-sm fileImage"/>
             <br/>
             <div> 
                 <label for="Available">Available</label>
@@ -48,8 +49,8 @@
                 <input type="radio" name="Image" th:field="*{Available}" value="NO" class="form-outline mb-4"/>
                 <br/>
             </div>
-            
-            
+
+
             <a th:href="@{/games}" class="btn btn-secondary">Go Back</a>
             <input type="submit" class="btn btn-primary" name="Submit">
 
